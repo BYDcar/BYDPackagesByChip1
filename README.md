@@ -28,6 +28,35 @@ python .\GitHub-ForceLargeFiles\src\reverse.py --root_dir "C:\xxx\BYDRepairManua
 # 国内下载速度可能会慢
 文件比较多，如果下载速度慢可以尝试Github代理，比如 https://ghproxy.com/
 
+文件比较多，如果下载速度慢可以尝试Github代理，比如 https://ghproxy.com/
+
+直接下载整个仓库容易断线，可以仅下载需要的文件。如果要下载整个仓库大概几十GB，git clone下载时有可能在十几GB断线，断线没法断点续传只能重新下，遇到这种情况可以考虑一个一个commit下载
+
+```
+# 本地创建一个空git仓库
+git init
+
+# 添加一个remote
+git remote add origin https://github.com/BYDcar/BYDPackagesByChip1
+
+# 拉取一个commit的hash
+# Note: the full history up to this commit will be retrieved unless 
+#       you limit it with '--depth=...' or '--shallow-since=...'
+git fetch origin d0fcf97e634d670a34a36e71d2395064674c17a2
+
+# 把git的文件解出来
+git reset --hard FETCH_HEAD
+
+# 再拉取下一个commit的hash
+git fetch origin c638f4e1de4d61e2295665249d9854d63386e437
+
+# 再把git的文件解出来
+git reset --hard FETCH_HEAD
+
+......
+
+```
+
 这一系列库包含的文件如下
 # 维修手册，仪表盘固件，软件和刷机教程：
 https://github.com/BYDcar/BYDRepairManual
