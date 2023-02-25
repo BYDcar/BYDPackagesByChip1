@@ -7,7 +7,7 @@ BYD (Build Your Dream) Car Repair Manuals and Factory Images
 # 为什么免费分享？
 发现网上有些零零散散的资料，找起来很麻烦。目前汽车的软硬件生态太过封闭，软件方面来说不像手机和路由器那样可以随意刷入第三方开源系统，硬件方面来说不像3D打印机那样有很多改装升级的零配件。想想如果汽车可以刷入开源系统，升级开源零件，也许会很酷可以实现之前没有的功能。  
 
-目前国外有些人在研究改装加装辅助驾驶自动驾驶，比如这个视频 https://www.youtube.com/watch?v=Te4AhlRXnLw 把一款2005年的老车改装了特斯拉的iBooster并加装了开源辅助软件openpilot (https://github.com/commaai/openpilot)，实现了自动行驶。还有一些人在研究燃油车改装成电动车，比如这个视频 https://www.youtube.com/watch?v=ZVtOss1U7_s 把一个老车大众甲壳虫改装成电动车。因此我分享这些资料以便促进国内外研究各种改装加装。
+目前国外有些人在研究改装加装辅助驾驶自动驾驶，比如这个视频 https://www.youtube.com/watch?v=Te4AhlRXnLw 把一款2005年的老车改装了特斯拉的iBooster并加装了开源辅助软件openpilot ( https://github.com/commaai/openpilot )，实现了自动行驶。还有一些人在研究燃油车改装成电动车，比如这个视频 https://www.youtube.com/watch?v=ZVtOss1U7_s 把一个老车大众甲壳虫改装成电动车。因此我分享这些资料以便促进国内外研究各种改装加装。
 
 另外研究这些很有可能是有实际利益的哦，目前比亚迪在售最便宜的秦PLUS DM-i 2023款 9.98万元的低配版是不含全速自适应巡航等L2辅助驾驶功能的，想要全速自适应巡航的话只有加4.6万元升级到14.58万元的高配版。假如可以做出几千元升级辅助驾驶的改装配件，那样低配版加上改装配件的性价比就会很高。
 
@@ -28,8 +28,6 @@ python .\GitHub-ForceLargeFiles\src\reverse.py --root_dir "C:\xxx\BYDRepairManua
 # 国内下载速度可能会慢
 文件比较多，如果下载速度慢可以尝试Github代理，比如 https://ghproxy.com/
 
-文件比较多，如果下载速度慢可以尝试Github代理，比如 https://ghproxy.com/
-
 直接下载整个仓库容易断线，可以仅下载需要的文件。如果要下载整个仓库大概几十GB，git clone下载时有可能在十几GB断线，断线没法断点续传只能重新下，遇到这种情况可以考虑一个一个commit下载
 
 ```
@@ -37,9 +35,9 @@ python .\GitHub-ForceLargeFiles\src\reverse.py --root_dir "C:\xxx\BYDRepairManua
 git init
 
 # 添加一个remote
-git remote add origin https://github.com/BYDcar/BYDPackagesByChip1
+git remote add origin https://github.com/BYDcar/BYDPackagesByChip1.git
 
-# 拉取一个commit的hash
+# 拉取一个commit的hash（后面的hash是从GitHub的commits里复制过来的）
 # Note: the full history up to this commit will be retrieved unless 
 #       you limit it with '--depth=...' or '--shallow-since=...'
 git fetch origin d0fcf97e634d670a34a36e71d2395064674c17a2
@@ -47,12 +45,13 @@ git fetch origin d0fcf97e634d670a34a36e71d2395064674c17a2
 # 把git的文件解出来
 git reset --hard FETCH_HEAD
 
-# 再拉取下一个commit的hash
+# 再拉取下一个commit的hash（后面的hash是从GitHub的commits里复制过来的，按顺序复制下一个hash）
 git fetch origin c638f4e1de4d61e2295665249d9854d63386e437
 
 # 再把git的文件解出来
 git reset --hard FETCH_HEAD
 
+再这样继续重复
 ......
 
 ```
