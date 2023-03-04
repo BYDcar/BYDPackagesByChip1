@@ -78,6 +78,23 @@ https://github.com/BYDcar/BYDRepairManual
 
 https://github.com/BYDcar/BYDPackagesByChip1
 ```
+├─WinCE
+│  ├─G6
+│  │      BYDG6多媒体修复与升级程序(手动).7z
+│  │      
+│  ├─S6
+│  │      比亚迪S6 多媒体系统升级程序V2.1.zip
+│  │      
+│  ├─S7
+│  │      S7-多媒体刷新固件1.0.zip
+│  │      S7多媒体SD卡更新程序V2.0.7z
+│  │      S7多媒体更新程序V3.0（无TV版）.zip
+│  │      
+│  ├─唐
+│  │      唐多媒体更新程序V4.0.rar
+│  │      
+│  └─秦
+│          15款秦多媒体升级刷机程序.rar
 ├─Di1
 │      VP128_1.18.1912190.10.1911270.zip
 │      VP128_1.18.1912190.6.1911270.zip
